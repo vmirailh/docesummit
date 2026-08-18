@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compra recebida — Doce Summit Fronteira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/logoSvg.svg" type="image/svg+xml">
+<style>
+:root{
+  --font-display: 'Montserrat', 'Arial Narrow', sans-serif;
+  --font-body: 'Sora', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+:root {
+  --chocolate-500: #2B1D18; --chocolate-900: #100b09;
+  --copper-300: #D7ACB4; --copper-400: #C58692; --copper-700: #7F3D49;
+  --offwhite-50: #fffefe;
+  --coral-500: #C17E8A; --coral-600: #9E4C5B;
+  --bg-page: var(--offwhite-50);
+  --text-primary-inverse: var(--offwhite-50);
+  --text-secondary-inverse: color-mix(in srgb, var(--offwhite-50) 68%, transparent);
+  --text-on-accent: var(--offwhite-50);
+  --brand-primary: var(--coral-500);
+  --brand-primary-hover: var(--coral-600);
+  --radius-sm: 6px;
+  --tracking-wide: 0.06em;
+  --leading-relaxed: 1.65;
+  --text-sm: 14px;
+  --duration-fast: 120ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --gradient-summit-dark: linear-gradient(135deg, var(--chocolate-900) 0%, var(--chocolate-500) 55%, var(--copper-700) 100%);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg-page); font-family: var(--font-body); }
+a { transition: background var(--duration-fast) var(--ease-standard); }
+a:hover { background: var(--brand-primary-hover) !important; }
+</style>
+</head>
+<body>
+<div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--gradient-summit-dark); padding: 40px 5vw;">
+  <div style="max-width: 480px; text-align: center; color: var(--offwhite-50);">
+    <img src="assets/logoSvg.svg" alt="Doce Summit" style="width: 48px; height: 48px; margin-bottom: 24px;">
+    <div style="font-family: var(--font-display); font-size: 34px; font-weight: 700; margin-bottom: 16px;">Recebemos sua compra!</div>
+    <div id="obrigado-status" style="font-size: 16px; color: var(--text-secondary-inverse); line-height: var(--leading-relaxed); margin-bottom: 12px;">
+      Estamos confirmando o pagamento com a InfinitePay. Assim que for aprovado, você recebe um e-mail com os detalhes do seu ingresso.
+    </div>
+    <div id="obrigado-pedido" style="font-family: var(--font-mono); font-size: 13px; color: var(--copper-300); margin-bottom: 32px;"></div>
+    <a href="index.html" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; font-family: var(--font-display); font-weight: 600; letter-spacing: var(--tracking-wide); text-transform: uppercase; font-size: var(--text-sm); border-radius: var(--radius-sm); background: var(--brand-primary); color: var(--text-on-accent); text-decoration: none;">Voltar para o site</a>
+  </div>
+</div>
+<script>
+  var params = new URLSearchParams(window.location.search);
+  var order = params.get('order');
+  if (order) {
+    document.getElementById('obrigado-pedido').textContent = 'Código do pedido: ' + order;
+  }
+</script>
+</body>
+</html>
