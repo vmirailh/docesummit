@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(function (data) {
         if (data.valor_centavos != null) precoEl.textContent = formatarPreco(data.valor_centavos);
         if (data.nome) loteEl.textContent = data.nome;
-        vagasEl.textContent = data.vagas_restantes != null ? 'Restam ' + data.vagas_restantes + ' vagas neste lote.' : '';
+        vagasEl.textContent = data.vagas_restantes != null ? 'Vagas limitadas neste lote — o valor sobe assim que esgotar.' : 'Inscrições abertas — garanta já a sua vaga.';
       })
       .catch(function () {});
 
